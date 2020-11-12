@@ -1,47 +1,57 @@
-import { TaskListComponent } from './task-list.component';
-import { TestBed, ComponentFixture } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
+import { TaskListComponent } from './task-list.component'
+import { TestBed, ComponentFixture } from '@angular/core/testing'
+import { By } from '@angular/platform-browser'
 
 describe('TaskListComponent', () => {
-  let component: TaskListComponent;
-  let fixture: ComponentFixture<TaskListComponent>;
+    let component: TaskListComponent
+    let fixture: ComponentFixture<TaskListComponent>
 
-  beforeEach(async (done) => {
-    const config = {
-      declarations: [TaskListComponent],
-      imports: [],
-      providers: [],
-    };
+    beforeEach(async (done) => {
+        const config = {
+            declarations: [TaskListComponent],
+            imports: [],
+            providers: [],
+        }
 
-    await TestBed.configureTestingModule(config).compileComponents();
+        await TestBed.configureTestingModule(config).compileComponents()
 
-    await done();
-  });
+        await done()
+    })
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(TaskListComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    beforeEach(() => {
+        fixture = TestBed.createComponent(TaskListComponent)
+        component = fixture.componentInstance
+        fixture.detectChanges()
+    })
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should create', () => {
+        expect(component).toBeTruthy()
+    })
 
-  it('should render task message', () => {
-    const task = fixture.debugElement.query(By.css('.task'));
-    const correctMessage = 'Message works!';
+    it('should render task message', () => {
+        const task = fixture.debugElement.query(By.css('.task'))
+        const correctMessage = 'Message works!'
 
-    expect(task.nativeElement.innerText).toEqual(correctMessage);
-  });
+        expect(task.nativeElement.innerText).toEqual(correctMessage)
+    })
 
-  it('should render updated task', () => {
-    const task = fixture.debugElement.query(By.css('.task'));
-    const correctMessage = 'Updated!';
+    it('should render updated task', () => {
+        const task = fixture.debugElement.query(By.css('.task'))
+        const correctMessage = 'Updated!'
 
-    component.message = correctMessage;
-    fixture.detectChanges();
+        component.message = correctMessage
+        fixture.detectChanges()
 
-    expect(task.nativeElement.innerText).toEqual(correctMessage);
-  });
-});
+        expect(task.nativeElement.innerText).toEqual(correctMessage)
+    })
+
+    it('should switch to edit mode when edit button clicked', () => {
+        const button = fixture.debugElement.query(By.css('.edit-button'))
+        const editSpy = spyOn(component, 'edit').and.callThrough()
+
+        button.triggerEventHandler('click', {})
+
+        expect(editSpy).toHaveBeenCalled()
+        expect(component.mode).toEqual(true)
+    })
+})

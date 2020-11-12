@@ -1,14 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
 
 @Component({
-  selector: 'app-task-list',
-  templateUrl: './task-list.component.html',
-  styleUrls: ['./task-list.component.scss'],
+    selector: 'app-task-list',
+    templateUrl: './task-list.component.html',
+    styleUrls: ['./task-list.component.scss'],
 })
 export class TaskListComponent implements OnInit {
-  constructor() {}
+    constructor() {}
 
-  message = 'Message works!';
+    message = 'Message works!'
+    mode = false
 
-  ngOnInit(): void {}
+    edit = () => {
+        this.mode = true
+    }
+
+    ngOnInit(): void {}
 }
