@@ -1,3 +1,7 @@
 <p class="task">{{ message }}</p>
 
+<label>
+  <input type="text" class="task-input" [value]="message" (input)="enter($event)"/>
+</label>
+
 <button class="edit-button" (click)="edit()">Edit</button>

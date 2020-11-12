@@ -54,4 +54,25 @@ describe('TaskListComponent', () => {
         expect(editSpy).toHaveBeenCalled()
         expect(component.mode).toEqual(true)
     })
+
+    it('should show task name inside input', () => {
+        const input = fixture.debugElement.query(By.css('.task-input'))
+
+        expect(input.nativeElement.value).toEqual(component.message)
+    })
+
+    it('should update message when input value will change', () => {
+        const input = fixture.debugElement.query(By.css('.task-input'))
+        const correctMessage = 'Updated!'
+
+        input.nativeElement.value = correctMessage
+        input.triggerEventHandler('input', {
+            target: { value: correctMessage },
+        })
+
+        // alternative:
+        // input.nativeElement.dispatchEvent(new Event('input'))
+
+        expect(component.message).toEqual(correctMessage)
+    })
 })

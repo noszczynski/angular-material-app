@@ -15,5 +15,9 @@ export class TaskListComponent implements OnInit {
         this.mode = true
     }
 
+    enter = (e) => {
+        this.message = e.target.value
+    }
+
     ngOnInit(): void {}
 }
