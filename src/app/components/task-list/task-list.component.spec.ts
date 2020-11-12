@@ -29,9 +29,19 @@ describe('TaskListComponent', () => {
   });
 
   it('should render task message', () => {
-    const message = fixture.debugElement.query(By.css('.message'));
+    const task = fixture.debugElement.query(By.css('.task'));
     const correctMessage = 'Message works!';
 
-    expect(message.nativeElement.innerText).toEqual(correctMessage);
+    expect(task.nativeElement.innerText).toEqual(correctMessage);
+  });
+
+  it('should render updated task', () => {
+    const task = fixture.debugElement.query(By.css('.task'));
+    const correctMessage = 'Updated!';
+
+    component.message = correctMessage;
+    fixture.detectChanges();
+
+    expect(task.nativeElement.innerText).toEqual(correctMessage);
   });
 });
