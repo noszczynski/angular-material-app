@@ -22,6 +22,7 @@ import { TableExampleComponent } from './pages/table-example/table-example.compo
 import { MatTableModule } from '@angular/material/table'
 import { MatPaginatorModule } from '@angular/material/paginator'
 import { MatSortModule } from '@angular/material/sort'
+import { IndicatorsExampleComponent } from './pages/indicators-example/indicators-example.component'
 
 @NgModule({
     declarations: [
@@ -29,6 +30,7 @@ import { MatSortModule } from '@angular/material/sort'
         DashboardExampleComponent,
         AddressformExampleComponent,
         TableExampleComponent,
+        IndicatorsExampleComponent,
     ],
     imports: [
         CommonModule,
