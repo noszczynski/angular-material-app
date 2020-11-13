@@ -1,7 +1,8 @@
 <p class="task">{{ message }}</p>
 
 <label>
-  <input type="text" class="task-input" [value]="message" (input)="enter($event)"/>
+  <input type="text" class="task-input" [value]="message" [(ngModel)]="message" #taskName="ngModel" required/>
 </label>
+  <div class="error" *ngIf="taskName.hasError('required')">Field cannot by empty</div>
 
 <button class="edit-button" (click)="edit()">Edit</button>

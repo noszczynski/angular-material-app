@@ -1,6 +1,7 @@
 import { TaskListComponent } from './task-list.component'
 import { TestBed, ComponentFixture } from '@angular/core/testing'
 import { By } from '@angular/platform-browser'
+import { FormsModule, NgModel } from '@angular/forms'
 
 describe('TaskListComponent', () => {
     let component: TaskListComponent
@@ -9,7 +10,7 @@ describe('TaskListComponent', () => {
     beforeEach(async (done) => {
         const config = {
             declarations: [TaskListComponent],
-            imports: [],
+            imports: [FormsModule],
             providers: [],
         }
 
@@ -55,14 +56,16 @@ describe('TaskListComponent', () => {
         expect(component.mode).toEqual(true)
     })
 
-    it('should show task name inside input', () => {
-        const input = fixture.debugElement.query(By.css('.task-input'))
+    it('should show task name inside input', async () => {
+        const input = fixture.debugElement.query(By.directive(NgModel))
+
+        await fixture.whenStable()
 
         expect(input.nativeElement.value).toEqual(component.message)
     })
 
-    it('should update message when input value will change', () => {
-        const input = fixture.debugElement.query(By.css('.task-input'))
+    it('should update message when input value will change', async () => {
+        const input = fixture.debugElement.query(By.directive(NgModel))
         const correctMessage = 'Updated!'
 
         input.nativeElement.value = correctMessage
@@ -74,5 +77,14 @@ describe('TaskListComponent', () => {
         // input.nativeElement.dispatchEvent(new Event('input'))
 
         expect(component.message).toEqual(correctMessage)
+    })
+
+    it('should show error message when input value is empty', async () => {
+        const input = fixture.debugElement.query(By.directive(NgModel))
+        const model = input.injector.get(NgModel)
+        const error = fixture.debugElement.query(By.css('.error'))
+
+        expect(model.valid).toBeFalsy()
+        expect(error).not.toBeNull('Error message not found')
     })
 })
