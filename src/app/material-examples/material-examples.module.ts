@@ -24,6 +24,7 @@ import { MatPaginatorModule } from '@angular/material/paginator'
 import { MatSortModule } from '@angular/material/sort'
 import { IndicatorsExampleComponent } from './pages/indicators-example/indicators-example.component'
 import { InteractionsExampleComponent } from './pages/interactions-example/interactions-example.component'
+import { ToolbarsExampleComponent } from './pages/toolbars-example/toolbars-example.component'
 
 @NgModule({
     declarations: [
@@ -33,6 +34,7 @@ import { InteractionsExampleComponent } from './pages/interactions-example/inter
         TableExampleComponent,
         IndicatorsExampleComponent,
         InteractionsExampleComponent,
+        ToolbarsExampleComponent,
     ],
     imports: [
         CommonModule,

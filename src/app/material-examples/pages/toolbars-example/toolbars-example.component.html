@@ -1,0 +1,83 @@
+<div class="container">
+  <h3 class="mat-caption">Priorities</h3>
+
+  <div class="example">
+    <mat-toolbar color="primary" class="toolbar">
+      <div>
+        <button mat-icon-button="">
+          <mat-icon>menu</mat-icon>
+        </button>
+          &nbsp;
+        <span>Example Toolbar</span>
+      </div>
+
+      <div>
+        <button mat-icon-button>
+          <mat-icon>person</mat-icon>
+        </button>
+        <button mat-icon-button (click)="showBadge = !showBadge">
+          <mat-icon matBadge="2" matBadgeColor="warn">chat</mat-icon>
+        </button>
+        <button mat-icon-button>
+          <mat-icon>more_vert</mat-icon>
+        </button>
+      </div>
+    </mat-toolbar>
+  </div>
+
+  <div class="example">
+    <mat-toolbar color="primary">
+      <mat-toolbar-row class="toolbar">
+        <div>
+          <button mat-icon-button="">
+            <mat-icon>menu</mat-icon>
+          </button>
+        </div>
+        <div>
+          <button mat-icon-button>
+            <mat-icon>person</mat-icon>
+          </button>
+          <button mat-icon-button (click)="showBadge = !showBadge">
+            <mat-icon matBadge="2" matBadgeColor="warn">chat</mat-icon>
+          </button>
+          <button mat-icon-button>
+            <mat-icon>more_vert</mat-icon>
+          </button>
+        </div>
+      </mat-toolbar-row>
+      <mat-toolbar-row class="toolbar">
+        <span class="toolbar-title">Example Toolbar</span>
+        <div>
+          <button mat-mini-fab class="search-button" color="success">
+            <mat-icon>add</mat-icon>
+          </button>
+          &nbsp;
+          <button mat-fab class="search-button">
+            <mat-icon>search</mat-icon>
+          </button>
+        </div>
+      </mat-toolbar-row>
+    </mat-toolbar>
+  </div>
+
+</div>
+
+<style>
+  .container {
+    padding: 30px;
+  }
+
+  .toolbar {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .search-button {
+    margin-top: 56px;
+  }
+
+  .example {
+    margin: 30px 0;
+    justify-content: flex-end;
+  }
+</style>

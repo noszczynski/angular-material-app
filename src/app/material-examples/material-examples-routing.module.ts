@@ -6,6 +6,7 @@ import { TableExampleComponent } from './pages/table-example/table-example.compo
 import { AddressformExampleComponent } from './pages/addressform-example/addressform-example.component'
 import { IndicatorsExampleComponent } from './pages/indicators-example/indicators-example.component'
 import { InteractionsExampleComponent } from './pages/interactions-example/interactions-example.component'
+import { ToolbarsExampleComponent } from './pages/toolbars-example/toolbars-example.component'
 
 const routes: Routes = [
     {
@@ -31,6 +32,10 @@ const routes: Routes = [
             {
                 path: 'interactions',
                 component: InteractionsExampleComponent,
+            },
+            {
+                path: 'toolbars',
+                component: ToolbarsExampleComponent,
             },
         ],
     },
