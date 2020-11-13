@@ -116,7 +116,7 @@ describe('TaskListComponent', () => {
             const saveSpy = spyOn(component, 'save').and.callThrough()
             const componentTask = component.task
 
-            component.onSave.subscribe((task) => {
+            component.saved.subscribe((task) => {
                 expect(componentTask).toEqual(task)
                 done()
             })

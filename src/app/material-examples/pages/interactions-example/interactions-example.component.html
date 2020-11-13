@@ -1,0 +1,55 @@
+<div class="interactions-container">
+  <h3 class="mat-caption">Priorities</h3>
+
+  <div class="example">
+    <button mat-button>Home Page</button>
+    <button mat-button>About Us</button>
+    <button mat-button>Contact</button>
+    <button mat-button disabled>Admin</button>
+  </div>
+
+  <h3 class="mat-caption">Priorities</h3>
+
+  <mat-toolbar class="example">
+    <button mat-button>Read more</button>
+    <button mat-flat-button color="primary">Select</button>
+  </mat-toolbar>
+
+  <mat-toolbar class="example">
+    <button mat-button>Show details</button>
+    <button mat-button color="primary">
+      <mat-icon inline>shopping_cart</mat-icon>
+      Add to cart
+    </button>
+  </mat-toolbar>
+
+  <mat-toolbar class="example">
+    <button mat-button>Show details</button>
+    <button mat-raised-button color="accent">
+      <mat-icon inline>shopping_cart</mat-icon>
+      Add to cart
+    </button>
+  </mat-toolbar>
+
+  <mat-toolbar class="example">
+    <button mat-button color="warn">Delete</button>
+    <div class="spacer"></div>
+    <button mat-stroked-button>Save Draft</button>
+    <button mat-flat-button color="primary">
+      <mat-icon inline>send</mat-icon>
+      Send
+    </button>
+  </mat-toolbar>
+
+</div>
+
+<style>
+  .spacer {
+    flex: 1 0 0;
+  }
+
+.example {
+  margin: 30px 0;
+  justify-content: flex-end;
+}
+</style>
