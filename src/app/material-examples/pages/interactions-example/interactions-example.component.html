@@ -12,11 +12,13 @@
 
   <mat-toolbar class="example">
     <button mat-button>Read more</button>
+    &nbsp;
     <button mat-flat-button color="primary">Select</button>
   </mat-toolbar>
 
   <mat-toolbar class="example">
     <button mat-button>Show details</button>
+    &nbsp;
     <button mat-button color="primary">
       <mat-icon inline>shopping_cart</mat-icon>
       Add to cart
@@ -25,6 +27,7 @@
 
   <mat-toolbar class="example">
     <button mat-button>Show details</button>
+    &nbsp;
     <button mat-raised-button color="accent">
       <mat-icon inline>shopping_cart</mat-icon>
       Add to cart
@@ -35,6 +38,7 @@
     <button mat-button color="warn">Delete</button>
     <div class="spacer"></div>
     <button mat-stroked-button>Save Draft</button>
+    &nbsp;
     <button mat-flat-button color="primary">
       <mat-icon inline>send</mat-icon>
       Send
@@ -44,6 +48,10 @@
 </div>
 
 <style>
+  .interactions-container {
+    padding: 30px;
+  }
+
   .spacer {
     flex: 1 0 0;
   }
