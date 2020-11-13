@@ -1,8 +1,13 @@
-<p class="task">{{ message }}</p>
-
-<label>
-  <input type="text" class="task-input" [value]="message" [(ngModel)]="message" #taskName="ngModel" required/>
-</label>
+<div *ngIf="!mode">
+  <p class="task">{{ task.title }}</p>
+  <button class="edit-button" (click)="edit()">Edit</button>
+</div>
+<div *ngIf="mode">
+  <label>
+    <input type="text" class="task-input" [value]="message" [(ngModel)]="task.title" #taskName="ngModel" required/>
+  </label>
   <div class="error" *ngIf="taskName.hasError('required')">Field cannot by empty</div>
+  <button class="save-button" (click)="save()">Save</button>
+</div>
 
-<button class="edit-button" (click)="edit()">Edit</button>
+
